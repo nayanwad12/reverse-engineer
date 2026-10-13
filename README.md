@@ -8,3 +8,7 @@ Claude Code workspace with [REA (Reverse Engineer Anything)](https://github.com/
 Native binary decompilation also needs Hopper, Ghidra or IDA on the machine running Claude Code; JavaScript/Electron, .NET, Go, WASM and archive inspection work without one.
 
 To update: `npx rea-agents@latest setup --client claude_code --dry-run`, then refresh these files.
+
+## Projects
+
+- [`scroll-3d-demo/`](scroll-3d-demo/) is a scroll-driven 3D WebGL demo (Three.js, Lenis, GSAP) recreating the technique behind Shopify Editions Winter '26.

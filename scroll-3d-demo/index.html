@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll 3D Demo</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Fixed WebGL layer behind the page. The HTML below scrolls over it. -->
+    <canvas id="stage" aria-hidden="true"></canvas>
+    <div id="hud" hidden></div>
+
+    <main>
+      <section class="screen hero">
+        <p class="eyebrow">A scroll-driven WebGL demo</p>
+        <h1>The Scroll<br />Edition</h1>
+        <p class="lede">Scroll down. Every position of the scrollbar is a frame on a keyframed timeline.</p>
+        <span class="scroll-cue">Scroll</span>
+      </section>
+
+      <section class="screen left">
+        <div class="card reveal">
+          <h2>Scroll scrubs a timeline</h2>
+          <p>
+            Camera paths and object motion are keyframes on one paused timeline. Each frame the page
+            converts <code>scrollY / innerHeight</code> into a time and seeks the timeline there, so
+            scrolling up plays it backwards.
+          </p>
+        </div>
+      </section>
+
+      <section class="screen right">
+        <div class="card reveal">
+          <h2>Two scenes, one shader</h2>
+          <p>
+            Each 3D scene renders into its own offscreen texture. A full-screen GLSL pass blends them
+            with a noise-driven edge, so the next world bleeds through like wet paint.
+          </p>
+        </div>
+      </section>
+
+      <section class="screen left">
+        <div class="card reveal">
+          <h2>Your mouse nudges the camera</h2>
+          <p>
+            The pointer orbits the camera a few degrees around its keyframed target, eased every
+            frame. The scene feels alive even when you stop scrolling.
+          </p>
+        </div>
+      </section>
+
+      <section class="screen right">
+        <div class="card reveal">
+          <h2>Bloom ties it together</h2>
+          <p>
+            An Unreal-style bloom pass runs after the composite. Its strength is a keyframed value
+            too, peaking mid-transition.
+          </p>
+        </div>
+      </section>
+
+      <section class="paper">
+        <div class="paper-inner">
+          <h2>How this page is built</h2>
+          <ol>
+            <li><strong>Three.js</strong> renders two scenes into half-float render targets.</li>
+            <li><strong>Lenis</strong> smooths native scrolling and reports the eased scroll position.</li>
+            <li><strong>GSAP</strong> holds a paused timeline measured in screens scrolled; it is never played, only seeked.</li>
+            <li>A <strong>composite shader</strong> mixes the scenes with fractal noise, then <strong>bloom</strong> and tone mapping run.</li>
+            <li>When WebGL is missing or reduced motion is requested, the page falls back to a static background.</li>
+          </ol>
+          <p class="muted">Add <code>?debug</code> to the URL to see the scroll-to-timeline mapping live.</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
