@@ -12,3 +12,4 @@ To update: `npx rea-agents@latest setup --client claude_code --dry-run`, then re
 ## Projects
 
 - [`scroll-3d-demo/`](scroll-3d-demo/) is a scroll-driven 3D WebGL demo (Three.js, Lenis, GSAP) recreating the technique behind Shopify Editions Winter '26.
+- [`voir-ananta/`](voir-ananta/) is the immersive WebGL site for VOIR ANANTA, Edition 01 · Infinite Raga: one 65k-particle sculpture that morphs through a form for each chapter.

@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>VOIR ANANTA</title>
+    <meta name="description" content="VOIR ANANTA, Edition 01: Infinite Raga. A wearable-art competition and live experience by VOIRTALES." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Hanken+Grotesk:wght@300..600&family=IBM+Plex+Mono:wght@400;500&family=Tiro+Devanagari+Sanskrit&display=swap"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <canvas id="stage" aria-hidden="true"></canvas>
+
+    <div id="loader" aria-hidden="true">
+      <span class="loader-deva" lang="sa">अनन्त</span>
+      <span class="loader-line"></span>
+    </div>
+
+    <header class="topbar">
+      <a class="brand" href="#hero">VOIRTALES</a>
+      <span class="topbar-edition">Voir Ananta · Edition 01</span>
+      <div class="topbar-actions">
+        <button id="sound" class="sound" type="button" aria-pressed="false">
+          <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          Tanpura <span class="sound-state">Off</span>
+        </button>
+        <a class="topbar-cta" href="#participate">Register</a>
+      </div>
+    </header>
+
+    <aside class="rail-wrap" aria-label="Chapters">
+      <p id="rail-title" class="rail-title"></p>
+      <ol id="rail" class="rail"></ol>
+    </aside>
+
+    <main>
+      <!-- HERO -->
+      <section class="chapter hero" id="hero" data-scene="hero" data-num="00" data-label="Voir Ananta">
+        <p class="hero-edition"><span>Edition 01</span><span class="hero-rule"></span><span>Infinite Raga</span></p>
+        <h1 class="hero-title">
+          <span class="hero-voir">Voir</span>
+          <span class="hero-ananta">Ananta</span>
+        </h1>
+        <p class="hero-sub"><span class="deva" lang="sa">अनन्त</span> To see the infinite.</p>
+        <p class="hero-lede">A wearable-art competition and live experience by VOIRTALES.</p>
+        <span class="scroll-cue" aria-hidden="true">Scroll to enter</span>
+      </section>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>To see the infinite</span><span class="deva" lang="sa">अनन्त</span><span>Infinite Raga</span><span class="deva" lang="sa">राग</span>
+          <span>To see the infinite</span><span class="deva" lang="sa">अनन्त</span><span>Infinite Raga</span><span class="deva" lang="sa">राग</span>
+        </div>
+      </div>
+
+      <!-- 01 -->
+      <section class="chapter chapter--left" id="what" data-scene="what" data-num="01" data-label="What is Voir Ananta?">
+        <div class="col">
+          <p class="kicker"><span class="num">01</span> What is VOIR ANANTA?</p>
+          <p class="lead reveal">
+            VOIR ANANTA is an annual wearable-art competition and live experience by VOIRTALES, bringing together
+            fashion, art, unconventional materials, performance, music, movement and visual expression.
+          </p>
+          <p class="body reveal">
+            It invites designers, artists and makers to move beyond conventional fashion and create something that
+            exists between garment, artwork and performance.
+          </p>
+          <p class="statement">
+            <span class="strike reveal">This is not a fashion show.</span>
+            <span class="split em">This is wearable art.</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- 02 -->
+      <section class="chapter chapter--left" id="edition" data-scene="edition" data-num="02" data-label="The first edition">
+        <div class="col col--wide">
+          <p class="kicker"><span class="num">02</span> The first edition</p>
+          <h2 class="display split">Infinite Raga</h2>
+          <p class="display-sub">A melody with no end.</p>
+          <p class="body reveal">The first edition explores the relationship between emotion, expression and form.</p>
+          <p class="body reveal">
+            Inspired by the idea of a melody that can take infinite directions, INFINITE RAGA invites participants to
+            translate emotion and thought into wearable art.
+          </p>
+          <p class="body reveal">The work can interpret one or more of the nine rasas:</p>
+
+          <ol class="rasas reveal">
+            <li><button type="button" class="rasa" data-hl="0" style="--c: #2fae8c"><span class="rasa-name">Shringara</span><span class="rasa-deva" lang="sa">शृङ्गार</span><span class="rasa-meaning">Beauty / Love</span><span class="rasa-hue">Śyāma</span></button></li>
+            <li><button type="button" class="rasa" data-hl="1" style="--c: #f6f1e6"><span class="rasa-name">Hasya</span><span class="rasa-deva" lang="sa">हास्य</span><span class="rasa-meaning">Joy</span><span class="rasa-hue">Sita</span></button></li>
+            <li><button type="button" class="rasa" data-hl="2" style="--c: #a3acb8"><span class="rasa-name">Karuna</span><span class="rasa-deva" lang="sa">करुण</span><span class="rasa-meaning">Compassion / Sorrow</span><span class="rasa-hue">Kapota</span></button></li>
+            <li><button type="button" class="rasa" data-hl="3" style="--c: #e2283f"><span class="rasa-name">Raudra</span><span class="rasa-deva" lang="sa">रौद्र</span><span class="rasa-meaning">Intensity / Anger</span><span class="rasa-hue">Rakta</span></button></li>
+            <li><button type="button" class="rasa" data-hl="4" style="--c: #eaa64c"><span class="rasa-name">Veera</span><span class="rasa-deva" lang="sa">वीर</span><span class="rasa-meaning">Courage</span><span class="rasa-hue">Gaura</span></button></li>
+            <li><button type="button" class="rasa" data-hl="5" style="--c: #6a55a8"><span class="rasa-name">Bhayanaka</span><span class="rasa-deva" lang="sa">भयानक</span><span class="rasa-meaning">Fear</span><span class="rasa-hue">Kṛṣṇa</span></button></li>
+            <li><button type="button" class="rasa" data-hl="6" style="--c: #2f63d6"><span class="rasa-name">Bibhatsa</span><span class="rasa-deva" lang="sa">बीभत्स</span><span class="rasa-meaning">Disquiet</span><span class="rasa-hue">Nīla</span></button></li>
+            <li><button type="button" class="rasa" data-hl="7" style="--c: #f3d43b"><span class="rasa-name">Adbhuta</span><span class="rasa-deva" lang="sa">अद्भुत</span><span class="rasa-meaning">Wonder</span><span class="rasa-hue">Pīta</span></button></li>
+            <li><button type="button" class="rasa" data-hl="8" style="--c: #cfe6ff"><span class="rasa-name">Shanta</span><span class="rasa-deva" lang="sa">शान्त</span><span class="rasa-meaning">Peace</span><span class="rasa-hue">Moonlight</span></button></li>
+          </ol>
+          <p class="caption">
+            Hover a rasa to find it in the mandala. Colours follow the Natya Shastra’s rasa palette; Shanta, a later
+            addition to the canon, is shown in moonlight white.
+          </p>
+
+          <p class="statement statement--stack">
+            <span class="split">One theme.</span>
+            <span class="split">Nine emotional worlds.</span>
+            <span class="split em">Infinite interpretations.</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- 03 -->
+      <section class="chapter chapter--center" id="categories" data-scene="categories" data-num="03" data-label="Two categories">
+        <p class="kicker"><span class="num">03</span> Two categories</p>
+        <div class="pair">
+          <article class="panel category reveal" data-hl="20" tabindex="0">
+            <p class="category-tag">Raga / Form</p>
+            <h3 class="category-title">The Experimental</h3>
+            <p class="body">For the most creative, unconventional and experimental interpretations of fashion + art.</p>
+            <p class="focus-label">Focus</p>
+            <ul class="chips">
+              <li>Form</li><li>Material</li><li>Structure</li><li>Silhouette</li><li>Movement</li><li>Imagination</li>
+            </ul>
+            <p class="question">How far can you take the form?</p>
+          </article>
+          <article class="panel category reveal" data-hl="21" tabindex="0">
+            <p class="category-tag">Raga / Voice</p>
+            <h3 class="category-title">The Reflective</h3>
+            <p class="body">For wearable art that carries a thought, cause, social issue, cultural question or human experience.</p>
+            <p class="focus-label">Focus</p>
+            <ul class="chips">
+              <li>Idea</li><li>Message</li><li>Emotion</li><li>Relevance</li><li>Reflection</li><li>Impact</li>
+            </ul>
+            <p class="question">What do you want your art to say?</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 04 -->
+      <section class="chapter chapter--right" id="material" data-scene="material" data-num="04" data-label="The 95 / 5 rule">
+        <div class="col">
+          <p class="kicker"><span class="num">04</span> The 95 / 5 rule</p>
+          <div class="ratio reveal">
+            <p class="ratio-big"><span>95</span><small>%</small></p>
+            <p class="ratio-label">Unconventional material</p>
+            <div class="ratio-bar" role="img" aria-label="95 percent unconventional material, 5 percent textile">
+              <span class="ratio-95"></span><span class="ratio-5" data-hl="39" tabindex="0" title="5% textile / fabric"></span>
+            </div>
+            <p class="ratio-small"><span>5%</span> Textile / fabric</p>
+          </div>
+          <p class="lead reveal">The challenge is to rethink what a garment can be made from.</p>
+          <p class="focus-label">Materials may include</p>
+          <ul class="chips chips--materials reveal">
+            <li data-hl="30" tabindex="0">Paper</li>
+            <li data-hl="31" tabindex="0">Metal</li>
+            <li data-hl="32" tabindex="0">Wire</li>
+            <li data-hl="33" tabindex="0">Wood</li>
+            <li>Found Objects</li>
+            <li data-hl="34" tabindex="0">Natural Materials</li>
+            <li data-hl="35" tabindex="0">Recycled Materials</li>
+            <li>Experimental Materials</li>
+          </ul>
+          <p class="statement statement--md"><span class="split em">The material must become part of the idea.</span></p>
+          <p class="body reveal">It should not simply decorate the garment.</p>
+        </div>
+      </section>
+
+      <!-- 05 -->
+      <section class="chapter chapter--left" id="human" data-scene="human" data-num="05" data-label="Made by human hands">
+        <div class="col">
+          <p class="kicker"><span class="num">05</span> Made by human hands</p>
+          <h2 class="display split">100% human-made.</h2>
+          <p class="lead reveal">
+            The final wearable artwork must demonstrate human authorship, making and intervention.
+          </p>
+          <ul class="nots reveal">
+            <li>No AI-generated final artwork.</li>
+            <li>No machine-generated final form.</li>
+            <li>No mass-produced final garment.</li>
+          </ul>
+          <p class="statement statement--md"><span class="split em">The hand is part of the story.</span></p>
+        </div>
+      </section>
+
+      <!-- 06 -->
+      <section class="chapter chapter--right" id="experience" data-scene="experience" data-num="06" data-label="The experience">
+        <div class="col">
+          <p class="kicker"><span class="num">06</span> The experience</p>
+          <h2 class="display display--md split">The garment is only half the story.</h2>
+          <div class="clock reveal">
+            <span class="clock-time" data-countdown>05:00</span>
+            <span class="clock-label">Every selected finalist gets 5 minutes to bring their wearable artwork to life.</span>
+          </div>
+          <p class="focus-label">The presentation may combine</p>
+          <ul class="chips reveal">
+            <li>Performance</li><li>Movement</li><li>Music</li><li>Dance</li><li>Theatre</li><li>Light</li><li>Sound</li><li>Spoken Word</li>
+          </ul>
+          <p class="body reveal">The designer must present three things:</p>
+          <p class="statement statement--stack statement--md">
+            <span class="split">The work.</span>
+            <span class="split">The idea.</span>
+            <span class="split em">The experience.</span>
+          </p>
+          <p class="body reveal">The garment and performance should work together as one concept.</p>
+        </div>
+      </section>
+
+      <!-- 07 -->
+      <section class="chapter chapter--left" id="who" data-scene="who" data-num="07" data-label="Who can participate?">
+        <div class="col">
+          <p class="kicker"><span class="num">07</span> Who can participate?</p>
+          <h2 class="display display--md split">If you have an idea, you have a place here.</h2>
+          <p class="lead reveal">Open to individuals 18 years and above.</p>
+          <ul class="disciplines reveal">
+            <li>Designers</li><li>Fashion Designers</li><li>Costume Designers</li><li>Artists</li><li>Stylists</li>
+            <li>Costume Makers</li><li>Sculptors</li><li>Architects</li><li>Performers</li><li>Illustrators</li>
+            <li>Makers</li><li>Students</li><li>Independent Practitioners</li><li>Creative Professionals</li>
+          </ul>
+          <p class="body reveal">Participants may come from any creative discipline.</p>
+        </div>
+      </section>
+
+      <!-- 08 -->
+      <section class="chapter chapter--right" id="selection" data-scene="selection" data-num="08" data-label="The selection">
+        <div class="col">
+          <p class="kicker"><span class="num">08</span> The selection</p>
+          <h2 class="display split">20 finalists.</h2>
+          <p class="body reveal">From all eligible entries:</p>
+          <div class="tally reveal">
+            <div class="tally-item" data-hl="50" tabindex="0"><span class="tally-num">10</span><span class="tally-label">Raga / Form</span></div>
+            <div class="tally-item" data-hl="51" tabindex="0"><span class="tally-num">10</span><span class="tally-label">Raga / Voice</span></div>
+          </div>
+          <p class="body reveal">
+            These 20 finalists will develop and present their wearable artworks at VOIR ANANTA — Edition 01.
+          </p>
+          <h3 class="subhead reveal">2 category winners</h3>
+          <p class="body reveal">One winner from each category.</p>
+          <ul class="winners reveal"><li>Raga / Form winner</li><li>Raga / Voice winner</li></ul>
+          <p class="focus-label">Additional recognitions may include</p>
+          <ul class="chips reveal"><li>Material Innovation</li><li>Best Performance</li><li>Best Concept</li><li>Audience Choice</li></ul>
+        </div>
+      </section>
+
+      <!-- 09 -->
+      <section class="chapter chapter--center" id="lenses" data-scene="lenses" data-num="09" data-label="How we look at the work">
+        <p class="kicker"><span class="num">09</span> How we look at the work</p>
+        <p class="lead lead--center reveal">Every submission will be evaluated through six lenses:</p>
+        <ol class="lens-grid">
+          <li class="panel lens reveal" data-hl="60" tabindex="0"><h3>Vision</h3><p>Is the idea distinctive?</p></li>
+          <li class="panel lens reveal" data-hl="61" tabindex="0"><h3>Concept</h3><p>Is the thought clearly expressed?</p></li>
+          <li class="panel lens reveal" data-hl="62" tabindex="0"><h3>Material</h3><p>How creatively has material been explored?</p></li>
+          <li class="panel lens reveal" data-hl="63" tabindex="0"><h3>Craft</h3><p>How well is the work constructed?</p></li>
+          <li class="panel lens reveal" data-hl="64" tabindex="0"><h3>Experience</h3><p>How effectively does it come alive on stage?</p></li>
+          <li class="panel lens reveal" data-hl="65" tabindex="0"><h3>Relevance</h3><p>Does it leave something to think about?</p></li>
+        </ol>
+      </section>
+
+      <!-- 10 -->
+      <section class="chapter chapter--left" id="journey" data-scene="journey" data-num="10" data-label="The journey">
+        <div class="col">
+          <p class="kicker"><span class="num">10</span> The journey</p>
+          <ol class="timeline">
+            <li class="reveal"><time>25 October</time><span>Registrations open</span></li>
+            <li class="reveal"><time>10 November</time><span>Registrations close</span></li>
+            <li class="reveal"><time>11–20 November</time><span>Preliminary screening</span></li>
+            <li class="reveal"><time>21–25 November</time><span>Technical + safety review</span></li>
+            <li class="reveal"><time>26–29 November</time><span>Finalist development / verification</span></li>
+            <li class="reveal"><time>30 November</time><span>20 finalists announced</span></li>
+            <li class="reveal is-show"><time>26–27 December*</time><span>VOIR ANANTA<br />Edition 01 · Infinite Raga</span></li>
+          </ol>
+          <p class="caption">*Tentative show dates.</p>
+        </div>
+      </section>
+
+      <!-- 11 -->
+      <section class="chapter chapter--right" id="participate" data-scene="participate" data-num="11" data-label="Participation">
+        <div class="col">
+          <p class="kicker"><span class="num">11</span> Participation</p>
+          <div class="fees">
+            <div class="panel fee reveal"><p class="fee-who">Students</p><p class="fee-amount">₹2,000</p></div>
+            <div class="panel fee reveal"><p class="fee-who">Other participants</p><p class="fee-amount">₹3,500</p></div>
+          </div>
+          <dl class="dates reveal">
+            <div><dt>Registration opens</dt><dd>25 October 2026</dd></div>
+            <div><dt>Registration closes</dt><dd>10 November 2026</dd></div>
+          </dl>
+          <div class="register">
+            <button type="button" class="cta" data-register>Register now</button>
+            <p class="register-note" role="status" hidden>Registration opens on 25 October 2026. The form will be linked here.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12 -->
+      <section class="chapter chapter--left" id="develop" data-scene="develop" data-num="12" data-label="What to develop">
+        <div class="col">
+          <p class="kicker"><span class="num">12</span> What participants need to develop</p>
+          <p class="lead reveal">Participants will be expected to develop:</p>
+          <ol class="develop">
+            <li class="reveal"><h3>The wearable artwork</h3><p>What is it?</p></li>
+            <li class="reveal"><h3>The concept</h3><p>What does it mean?</p></li>
+            <li class="reveal"><h3>The material</h3><p>Why this material?</p></li>
+            <li class="reveal"><h3>The rasa</h3><p>What emotion or emotional world does it explore?</p></li>
+            <li class="reveal"><h3>The performance</h3><p>How will you bring it alive in five minutes?</p></li>
+          </ol>
+          <p class="body reveal">
+            The final selection process will consider both the wearable artwork and its potential as a live experience.
+          </p>
+        </div>
+      </section>
+
+      <!-- 13 -->
+      <section class="chapter chapter--center" id="show" data-scene="show" data-num="13" data-label="The show">
+        <p class="kicker"><span class="num">13</span> The show</p>
+        <h2 class="display display--xl split">20 works. 20 worlds.</h2>
+        <p class="lead lead--center reveal">One stage where:</p>
+        <p class="meets">
+          <span class="split">Fashion meets art.</span>
+          <span class="split">Material meets movement.</span>
+          <span class="split">Idea meets performance.</span>
+        </p>
+        <p class="body body--center reveal">
+          VOIR ANANTA is designed as an immersive live experience rather than a conventional runway presentation.
+        </p>
+        <p class="signoff reveal">VOIR ANANTA <span>To see the infinite.</span></p>
+      </section>
+
+      <!-- 14 -->
+      <section class="chapter chapter--left" id="judges" data-scene="judges" data-num="14" data-label="The judges">
+        <div class="col">
+          <p class="kicker"><span class="num">14</span> The judges</p>
+          <h2 class="display display--md split">Meet the eyes behind Ananta.</h2>
+          <p class="body reveal">The judging panel will bring perspectives from relevant fields including:</p>
+          <ul class="chips reveal"><li>Fashion</li><li>Art</li><li>Design</li><li>Material</li><li>Performance</li><li>Culture</li></ul>
+          <p class="caption">Judge profiles will be announced separately.</p>
+        </div>
+      </section>
+
+      <!-- 15 -->
+      <section class="chapter chapter--right" id="partners" data-scene="partners" data-num="15" data-label="Partnerships">
+        <div class="col">
+          <p class="kicker"><span class="num">15</span> Partnerships</p>
+          <h2 class="display display--md split">Build the infinite with us.</h2>
+          <p class="body reveal">VOIR ANANTA creates opportunities across:</p>
+          <ul class="chips reveal">
+            <li>Fashion</li><li>Art</li><li>Material</li><li>Technology</li><li>Performance</li><li>Music</li><li>Beauty</li><li>Hospitality</li><li>Mobility</li><li>Culture</li>
+          </ul>
+          <p class="focus-label">Partnership opportunities include</p>
+          <ul class="partner-list reveal">
+            <li>Title / Founding Partner</li><li>Category Partner</li><li>Material Partner</li><li>Technology Partner</li>
+            <li>Experience Partner</li><li>Hospitality Partner</li><li>Media Partner</li>
+          </ul>
+          <p class="body reveal">For partnership enquiries: <span class="placeholder">[EMAIL]</span></p>
+        </div>
+      </section>
+
+      <!-- 16 -->
+      <section class="chapter chapter--left" id="about" data-scene="about" data-num="16" data-label="About VOIRTALES">
+        <div class="col">
+          <p class="kicker"><span class="num">16</span> About VOIRTALES</p>
+          <h2 class="display display--md split">The world behind Ananta.</h2>
+          <p class="lead reveal">
+            VOIRTALES is an independent magazine exploring Fashion, Lifestyle and Culture through people, perspectives,
+            ideas and experiences shaping how we see, live and express.
+          </p>
+          <p class="body reveal">
+            VOIR ANANTA extends that perspective into a physical experience where ideas become form.
+          </p>
+          <p class="masthead reveal">VOIRTALES <span>Fashion · Lifestyle · Culture</span></p>
+        </div>
+      </section>
+
+      <!-- FINAL -->
+      <section class="chapter chapter--center final" id="final" data-scene="final" data-num="∞" data-label="What will you make wearable?">
+        <h2 class="final-q split">What will you make wearable?</h2>
+        <p class="final-name">VOIR ANANTA</p>
+        <p class="final-edition">Edition 01 · Infinite Raga</p>
+        <p class="hero-sub"><span class="deva" lang="sa">अनन्त</span> To see the infinite.</p>
+        <a class="cta cta--ghost" href="#participate">Register</a>
+        <p class="caption">An annual initiative by VOIRTALES.</p>
+      </section>
+
+      <div class="marquee marquee--foot" aria-hidden="true">
+        <div class="marquee-track">
+          <span>What will you make wearable?</span><span class="deva" lang="sa">अनन्त</span><span>Voir Ananta</span><span class="deva" lang="sa">राग</span>
+          <span>What will you make wearable?</span><span class="deva" lang="sa">अनन्त</span><span>Voir Ananta</span><span class="deva" lang="sa">राग</span>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
