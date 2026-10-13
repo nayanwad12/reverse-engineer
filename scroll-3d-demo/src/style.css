@@ -1,4 +1,6 @@
+/* Deliberately single-theme: a dark, painterly stage with a light paper ending. */
 :root {
+  color-scheme: dark;
   --ink: #f6efe2;
   --ink-muted: rgba(246, 239, 226, 0.72);
   --paper: #efe6d4;
@@ -141,7 +143,7 @@ code {
 }
 
 .reveal {
-  opacity: 0;
+  opacity: 0.3;
   transform: translateY(40px);
   transition:
     opacity 0.9s ease,

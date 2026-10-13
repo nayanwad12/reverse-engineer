@@ -10,8 +10,8 @@ npm run dev        # http://localhost:5173
 npm run build      # production build in dist/
 ```
 
-URL flags: `?debug` shows the scroll-to-timeline mapping, `?fallback` forces the static
-no-WebGL version.
+URL flags: `#debug` (or `?debug`) shows the scroll-to-timeline mapping, `#fallback` forces the
+static no-WebGL version.
 
 ## How it works
 

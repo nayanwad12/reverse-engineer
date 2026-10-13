@@ -12,11 +12,13 @@ import { createCompositeMaterial } from './composite.js'
 
 const root = document.documentElement
 const params = new URLSearchParams(location.search)
+// Flags work as ?debug or #debug (some hosts strip the query string).
+const flag = (name) => params.has(name) || location.hash === `#${name}`
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches
 
 setupReveals()
 
-if (reducedMotion || params.has('fallback') || !hasWebGL2()) {
+if (reducedMotion || flag('fallback') || !hasWebGL2()) {
   root.classList.add('no-webgl')
 } else {
   start()
@@ -44,7 +46,7 @@ function start() {
   const canvas = document.getElementById('stage')
   const paper = document.querySelector('.paper')
   const hud = document.getElementById('hud')
-  hud.hidden = !params.has('debug')
+  hud.hidden = !flag('debug')
 
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: false, powerPreference: 'high-performance' })
   renderer.toneMapping = THREE.ACESFilmicToneMapping
